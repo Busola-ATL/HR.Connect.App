@@ -1,4 +1,6 @@
-﻿namespace HR.Connect.App
+﻿using HR.Connect.App.MVVM.Views;
+
+namespace HR.Connect.App
 {
     public partial class App : Application
     {
@@ -6,7 +8,7 @@
         {
             InitializeComponent();
 
-            MainPage = new AppShell();
+            MainPage = new LoginPageView();
         }
     }
 }
