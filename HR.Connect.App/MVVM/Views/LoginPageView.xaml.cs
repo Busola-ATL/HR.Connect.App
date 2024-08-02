@@ -9,11 +9,18 @@ public partial class LoginPageView : ContentPage
 		InitializeComponent();
 		BindingContext = new LoginPageViewModel();
 
+	}
 
-	 }
+	private void Button_Clicked(object sender, EventArgs e)
+	{
+		if (User.Text == "Aminat" && password.Text == "1234")
+		{
+			Navigation.PushAsync(new AdminPanelPage());
+		}
+		else
+		{
+			DisplayAlert("Error Message", "Either your password or userName is incorrect!", "Ok");
+		}
+	}
 
-    private void Button_Clicked(object sender, EventArgs e)
-    {
-
-    }
 }

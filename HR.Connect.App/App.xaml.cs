@@ -7,8 +7,11 @@ namespace HR.Connect.App
         public App()
         {
             InitializeComponent();
+            var navPage = new NavigationPage(new LoginPageView());
+            navPage.BarBackgroundColor = Colors.DarkRed;
+            navPage.BarTextColor = Colors.White;
 
-            MainPage = new LoginPageView();
+            MainPage = navPage;
         }
     }
 }

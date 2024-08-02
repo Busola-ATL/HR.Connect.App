@@ -4,19 +4,20 @@
              x:Class="HR.Connect.App.MVVM.Views.LoginPageView"
              Title="LoginPageView">
 
-    <ScrollView>
-        
-        <Grid RowDefinitions=".2*, .05*, .05*, .1*" RowSpacing="0.5">
-            <Label Grid.Row="0" HorizontalOptions="Center" Text="HR-Connect-App" TextColor="AntiqueWhite" FontSize="Header" FontAttributes="Bold"/>
+    <Grid x:Name="Container">
+        <Frame Margin="10, 0, 10, 0" VerticalOptions="Center">
+            <VerticalStackLayout Spacing="12" VerticalOptions="Center">
+                <Label Text="HR_Connect-App" FontAttributes="Bold" FontSize="Large" HorizontalTextAlignment="Center"/>
+                <Label Text="UserName" FontAttributes="Bold"/>
+                <Entry Placeholder="UserName" TextColor="Black"
+                   FontSize="15" FontAttributes="Bold" x:Name="User" />
+                <Label Text="Password" FontAttributes="Bold"/>
+                <Entry Placeholder="Password" TextColor="Black" 
+                       IsPassword="True" FontSize="15"
+                       FontAttributes="Bold" x:Name="password"/>
+                <Button Text="Login" BackgroundColor="DarkRed" Clicked="Button_Clicked"/>
 
-            <Entry Grid.Row="1" Placeholder="UserName" TextColor="AntiqueWhite" HeightRequest="10" WidthRequest="100"
-                    HorizontalOptions="Center" VerticalOptions="Center"/>
-            <Entry Grid.Row="2" Placeholder="Password" TextColor="AntiqueWhite" HeightRequest="10" WidthRequest="100"
-                    HorizontalOptions="Center" VerticalOptions="Center" IsPassword="True"/>
-            <Button  Grid.Row="3" Text="Submit" BackgroundColor="YellowGreen" HorizontalOptions="Center" VerticalOptions="Center"
-                    WidthRequest="100" HeightRequest="5" Clicked=""/>
-
-
-        </Grid>
-    </ScrollView>
+            </VerticalStackLayout>
+        </Frame>
+    </Grid>
 </ContentPage>
