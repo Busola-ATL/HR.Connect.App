@@ -3,13 +3,65 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="HR.Connect.App.MVVM.Views.AdminPanelPage"
              Title="AdminPanelPage">
-    <ScrollView>
-        <Grid>
-            <Frame Margin="10, 0, 10, 0" HeightRequest="500">
-                <WebView HeightRequest="500" VerticalOptions="Center" Source="https://www.hr.com/en?t=/Default/spl_login"/>
-            </Frame>
+    <ContentPage.Resources>
+        <Color x:Key="Primary">#000080</Color>
+        <Color x:Key="Secondary">#8b0000</Color>
+        <Color x:Key="Other">#c0c0c0</Color>
+    </ContentPage.Resources>
 
-        </Grid>
-    </ScrollView>
-    
+        <Grid Background="{StaticResource Other}">
+            <Grid.RowDefinitions>
+                <RowDefinition Height=".3*"/>
+                <RowDefinition Height=".2*"/>
+                <RowDefinition Height=".4*"/>
+                <RowDefinition Height=".1*"/>
+            </Grid.RowDefinitions>
+
+            <VerticalStackLayout Margin="2" BackgroundColor="AntiqueWhite" Grid.Row="0">
+                <SearchBar HeightRequest="70" x:Name="empName" Placeholder="Name" FontSize="20" TextColor="Black"/>
+                <Frame HeightRequest="70" BackgroundColor="{StaticResource Other}" CornerRadius="10">
+                    <Label 
+                           FontAttributes="Bold" 
+                           FontSize="Small"
+                           Text="Name of Employee"
+                           VerticalOptions="Center" HorizontalOptions="Center" x:Name="emp"/>
+                </Frame>
+            </VerticalStackLayout>
+
+            <VerticalStackLayout Grid.Row="1" Margin="0,0,0,10">
+                <Image Source="icons" HeightRequest="400" 
+                       WidthRequest="400" 
+                       IsAnimationPlaying="True"/>
+            </VerticalStackLayout>
+
+        <VerticalStackLayout Margin="0,0,0,0" BackgroundColor="AntiqueWhite" Grid.Row="2">
+
+            <Label Text="Role:" FontAttributes="Bold" FontSize="Small" x:Name="empRole" HorizontalOptions="StartAndExpand"/>
+            <Entry Text="Developer"  BackgroundColor="AntiqueWhite" FontAttributes="Bold" HorizontalOptions="Fill"/>
+
+            <Label Text="Phone No:" FontAttributes="Bold" FontSize="Small" x:Name="empPhoneNum"/>
+            <Entry Text="+76583928"  BackgroundColor="AntiqueWhite" FontAttributes="Bold" HorizontalOptions="Fill"/>
+
+
+            <Label Text="Email:" FontAttributes="Bold" FontSize="Small" x:Name="empEmail"/>
+            <Entry Text="Developer@gmail.com"  BackgroundColor="AntiqueWhite" FontAttributes="Bold" HorizontalOptions="Fill"/>
+
+
+            <Label Text="Department:" FontAttributes="Bold" FontSize="Small" x:Name="empDept"/>
+            <Entry Text="Information Technology"  BackgroundColor="AntiqueWhite" FontAttributes="Bold" HorizontalOptions="Fill"/>
+
+
+            <Label Text="Location:" FontAttributes="Bold" FontSize="Small" x:Name="empLocation"/>
+            <Entry Text="Sudbury, Ontario" BackgroundColor="AntiqueWhite" FontAttributes="Bold" HorizontalOptions="Fill"/>
+            
+            <Button Text="Next" TextColor="Black"
+                    FontSize="Small" FontAttributes="Bold"
+                    Margin="0,0,0,5" Background="{StaticResource Secondary}" 
+                    HeightRequest="50" WidthRequest="100"
+                    Clicked="editInfoPage"/>
+
+        </VerticalStackLayout>
+
+    </Grid>
+
 </ContentPage>
