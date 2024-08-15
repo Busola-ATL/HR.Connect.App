@@ -46,14 +46,14 @@
                 <VerticalStackLayout Margin="0,5,0,5" BackgroundColor="AntiqueWhite" >
 
                     <Label Text="Role:" FontAttributes="Bold" FontSize="Small" x:Name="empRole" HorizontalOptions="StartAndExpand"/>
-                    <Entry Text="Developer"   FontAttributes="Bold" HorizontalOptions="Fill"/>
+                    <Entry Text="Developer" FontAttributes="Bold" HorizontalOptions="Fill" x:Name="txtRole"/>
 
                     <Label Text="Phone No:" FontAttributes="Bold" FontSize="Small" x:Name="empPhoneNum"/>
-                    <Entry Text="+76583928"  BackgroundColor="AntiqueWhite" FontAttributes="Bold" HorizontalOptions="Fill"/>
+                    <Entry Text="+76583928"  BackgroundColor="AntiqueWhite"  FontAttributes="Bold" HorizontalOptions="Fill"/>
 
 
                     <Label Text="Email:" FontAttributes="Bold" FontSize="Small" x:Name="empEmail"/>
-                    <Entry Text="Developer@gmail.com"  BackgroundColor="AntiqueWhite" FontAttributes="Bold" HorizontalOptions="Fill"/>
+                    <Entry Text="Developer@gmail.com"  BackgroundColor="AntiqueWhite"  FontAttributes="Bold" HorizontalOptions="Fill"/>
 
 
                     <Label Text="Department:" FontAttributes="Bold" FontSize="Small" x:Name="empDept"/>

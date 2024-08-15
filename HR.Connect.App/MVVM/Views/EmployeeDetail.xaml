@@ -31,7 +31,7 @@
                     <ColumnDefinition Width=".5*"/>
                 </Grid.ColumnDefinitions>
                 <HorizontalStackLayout>
-                    <Button Text="Add Employee" FontAttributes="Bold"  HeightRequest="150" WidthRequest="150" TextColor="Black" BackgroundColor="Grey"/>
+                    <Button Text="Add Employee" FontAttributes="Bold" Clicked="Crud_Btn"  HeightRequest="150" WidthRequest="150" TextColor="Black" BackgroundColor="Grey"/>
                     <Button Text="Update"  Grid.Column="1" FontAttributes="Bold" HeightRequest="150" WidthRequest="150" Margin="50, 0, 0,5" TextColor="Black" BackgroundColor="Grey"/>
                 </HorizontalStackLayout>
             </Grid>
@@ -50,7 +50,10 @@
         </Grid>
 
         <Grid Grid.Row="2">
-            <Button Text="Logout" TextColor="Black" FontAttributes="Bold" WidthRequest="200" HeightRequest="50" BackgroundColor="DarkRed"/>
+            <Button Text="Logout" TextColor="Black" 
+                    FontAttributes="Bold" WidthRequest="200" 
+                    HeightRequest="50" BackgroundColor="DarkRed"
+                    Clicked="Button_Clicked"/>
         </Grid>
     </Grid>
 </ContentPage>

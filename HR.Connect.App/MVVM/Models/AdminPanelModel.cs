@@ -8,13 +8,18 @@ namespace HR.Connect.App.MVVM.Models
 {
     public class AdminPanelModel
     {
-        public int Id { get; set; }
-        public string IT { get; set; }
-        public string HumanResource { get; set; }
-        public string Marketing { get; set; }
-        public string Finance { get; set; }
-        public string Payroll {  get; set; }
+        //This will be a static data for that will be binded with the controls  on admin page, it will be seeded with some data in adminPageModelView. Due to the timeframe, I will later in future replace this with an API.
+       public string? Role {  get; set; }
+        public string? Name { get; set; }
+        public string? PhoneNum {  get; set; }
+        public string? Email {  get; set; }
+        public string? Department { get; set; }
+        public string? Location {  get; set; }
 
-        public AdminPanelModel() { }
+        public AdminPanelModel()
+        {
+
+        }
+
     }
 }
