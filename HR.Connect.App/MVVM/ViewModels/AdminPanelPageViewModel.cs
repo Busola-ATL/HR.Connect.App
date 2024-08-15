@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace HR.Connect.App.MVVM.ViewModels
 {
-    internal class AdminPanelPageViewModel
+    public class AdminPanelPageViewModel
     {
     }
 }

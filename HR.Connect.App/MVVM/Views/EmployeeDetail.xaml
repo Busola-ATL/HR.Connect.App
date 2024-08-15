@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="HR.Connect.App.MVVM.Views.EmployeeDetail"
+             Title="EmployeeDetail">
+    <Grid Margin="20">
+        <Grid.RowDefinitions>
+            <RowDefinition Height=".1*"/>
+            <RowDefinition Height=".7*"/>
+            <RowDefinition Height=".2*"/>
+        </Grid.RowDefinitions>
+
+        <Grid>
+            <Label Text="HR-CONNECT-APP" 
+                   FontSize="Large" 
+                   HorizontalTextAlignment="Center"
+                   FontAttributes="Bold"
+                   FontFamily="External"
+                   TextColor="White" />
+        </Grid>
+
+        <Grid Grid.Row="1">
+            <Grid.RowDefinitions>
+                    <RowDefinition Height=".4*"/>
+                    <RowDefinition Height=".4*"/>
+                </Grid.RowDefinitions>
+
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width=".5*"/>
+                    <ColumnDefinition Width=".5*"/>
+                </Grid.ColumnDefinitions>
+                <HorizontalStackLayout>
+                    <Button Text="Add Employee" FontAttributes="Bold"  HeightRequest="150" WidthRequest="150" TextColor="Black" BackgroundColor="Grey"/>
+                    <Button Text="Update"  Grid.Column="1" FontAttributes="Bold" HeightRequest="150" WidthRequest="150" Margin="50, 0, 0,5" TextColor="Black" BackgroundColor="Grey"/>
+                </HorizontalStackLayout>
+            </Grid>
+
+            <Grid Grid.Row="1">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width=".5*"/>
+                    <ColumnDefinition Width=".5*" />
+                </Grid.ColumnDefinitions>
+
+                <HorizontalStackLayout>
+                    <Button Text="Delete"  FontAttributes="Bold" HeightRequest="150" WidthRequest="150" Margin="0, 5, 0,0" TextColor="Black" BackgroundColor="Grey"/>
+                    <Button Text="Get Employee"  Grid.Column="1" FontAttributes="Bold" HeightRequest="150" WidthRequest="150" Margin="50, 5, 0,0" TextColor="Black" BackgroundColor="Grey"/>
+                </HorizontalStackLayout>
+            </Grid>
+        </Grid>
+
+        <Grid Grid.Row="2">
+            <Button Text="Logout" TextColor="Black" FontAttributes="Bold" WidthRequest="200" HeightRequest="50" BackgroundColor="DarkRed"/>
+        </Grid>
+    </Grid>
+</ContentPage>

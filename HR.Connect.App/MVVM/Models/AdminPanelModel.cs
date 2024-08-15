@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace HR.Connect.App.MVVM.Models
 {
-    public class Department
+    public class AdminPanelModel
     {
         public int Id { get; set; }
         public string IT { get; set; }
@@ -15,6 +15,6 @@ namespace HR.Connect.App.MVVM.Models
         public string Finance { get; set; }
         public string Payroll {  get; set; }
 
-        public Department() { }
+        public AdminPanelModel() { }
     }
 }

@@ -12,6 +12,11 @@ namespace HR.Connect.App
             navPage.BarTextColor = Colors.White;
 
             MainPage = navPage;
+
+            var navPage2 = new NavigationPage(new AdminPanelPage());
+            navPage2.BarBackgroundColor = Colors.DarkRed;
+            navPage2.BarTextColor = Colors.White;
+
         }
     }
 }

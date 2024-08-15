@@ -9,6 +9,17 @@ public partial class AdminPanelPage : ContentPage
 
     private void Button_Clicked(object sender, EventArgs e)
     {
+		 Navigation.PushAsync(new EmployeeDetail());
+    }
 
+    private  void  empName_Search(object sender, EventArgs e)
+    {
+        var emp = empName.Text;
+
+        if(emp  != null)
+        {
+          empLabel.Text = emp;
+        }
+       
     }
 }

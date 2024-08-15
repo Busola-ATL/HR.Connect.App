@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace HR.Connect.App.MVVM.ViewModels
+namespace HR.Connect.App.MVVM.Models
 {
-    public class LoginPageViewModel
+    internal class LoginModel
     {
     }
 }

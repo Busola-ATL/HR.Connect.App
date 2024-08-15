@@ -2,7 +2,8 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="HR.Connect.App.MVVM.Views.AdminPanelPage"
-             Title="AdminPanelPage">
+             Title="AdminPanelPage"
+             xmlns:skia="clr-namespace:SkiaSharp.Extended.UI.Controls;assembly=SkiaSharp.Extended.UI">
     <ContentPage.Resources>
         <Color x:Key="Primary">#000080</Color>
         <Color x:Key="Secondary">#8b0000</Color>
@@ -12,56 +13,68 @@
         <Grid Background="{StaticResource Other}">
             <Grid.RowDefinitions>
                 <RowDefinition Height=".3*"/>
-                <RowDefinition Height=".2*"/>
-                <RowDefinition Height=".4*"/>
+                <RowDefinition Height=".1*"/>
+                <RowDefinition Height=".5*"/>
                 <RowDefinition Height=".1*"/>
             </Grid.RowDefinitions>
 
-            <VerticalStackLayout Margin="2" BackgroundColor="AntiqueWhite" Grid.Row="0">
-                <SearchBar HeightRequest="70" x:Name="empName" Placeholder="Name" FontSize="20" TextColor="Black"/>
-                <Frame HeightRequest="70" BackgroundColor="{StaticResource Other}" CornerRadius="10">
-                    <Label 
-                           FontAttributes="Bold" 
-                           FontSize="Small"
-                           Text="Name of Employee"
-                           VerticalOptions="Center" HorizontalOptions="Center" x:Name="emp"/>
-                </Frame>
-            </VerticalStackLayout>
+            <Grid>
+                <VerticalStackLayout Margin="2" BackgroundColor="AntiqueWhite" Grid.Row="0">
+                    <SearchBar HeightRequest="70" 
+                               x:Name="empName" Placeholder="Name" 
+                               FontSize="20" TextColor="Black"
+                               SearchButtonPressed="empName_Search"/>
+                    <Frame HeightRequest="70" BackgroundColor="{StaticResource Other}" CornerRadius="10">
+                        <Label 
+                            FontAttributes="Bold" 
+                            FontSize="Small"
+                            Text="Name of Employee"
+                            VerticalOptions="Center" HorizontalOptions="Center" x:Name="empLabel"
+                            />
+                    </Frame>
+                </VerticalStackLayout>
+            </Grid>
 
-            <VerticalStackLayout Grid.Row="1" Margin="0,0,0,10">
-                <Image Source="icons" HeightRequest="400" 
-                       WidthRequest="400" 
-                       IsAnimationPlaying="True"/>
-            </VerticalStackLayout>
+        <Grid Grid.Row="1" >
+            <skia:SKLottieView
+                    Source="Animation.json"
+                    RepeatCount="-1"
+                HeightRequest="200" BackgroundColor="{StaticResource Other}"/>
+        </Grid>
 
-        <VerticalStackLayout Margin="0,0,0,0" BackgroundColor="AntiqueWhite" Grid.Row="2">
+        <Grid Grid.Row="2">
+                <VerticalStackLayout Margin="0,5,0,5" BackgroundColor="AntiqueWhite" >
 
-            <Label Text="Role:" FontAttributes="Bold" FontSize="Small" x:Name="empRole" HorizontalOptions="StartAndExpand"/>
-            <Entry Text="Developer"  BackgroundColor="AntiqueWhite" FontAttributes="Bold" HorizontalOptions="Fill"/>
+                    <Label Text="Role:" FontAttributes="Bold" FontSize="Small" x:Name="empRole" HorizontalOptions="StartAndExpand"/>
+                    <Entry Text="Developer"   FontAttributes="Bold" HorizontalOptions="Fill"/>
 
-            <Label Text="Phone No:" FontAttributes="Bold" FontSize="Small" x:Name="empPhoneNum"/>
-            <Entry Text="+76583928"  BackgroundColor="AntiqueWhite" FontAttributes="Bold" HorizontalOptions="Fill"/>
-
-
-            <Label Text="Email:" FontAttributes="Bold" FontSize="Small" x:Name="empEmail"/>
-            <Entry Text="Developer@gmail.com"  BackgroundColor="AntiqueWhite" FontAttributes="Bold" HorizontalOptions="Fill"/>
+                    <Label Text="Phone No:" FontAttributes="Bold" FontSize="Small" x:Name="empPhoneNum"/>
+                    <Entry Text="+76583928"  BackgroundColor="AntiqueWhite" FontAttributes="Bold" HorizontalOptions="Fill"/>
 
 
-            <Label Text="Department:" FontAttributes="Bold" FontSize="Small" x:Name="empDept"/>
-            <Entry Text="Information Technology"  BackgroundColor="AntiqueWhite" FontAttributes="Bold" HorizontalOptions="Fill"/>
+                    <Label Text="Email:" FontAttributes="Bold" FontSize="Small" x:Name="empEmail"/>
+                    <Entry Text="Developer@gmail.com"  BackgroundColor="AntiqueWhite" FontAttributes="Bold" HorizontalOptions="Fill"/>
 
 
-            <Label Text="Location:" FontAttributes="Bold" FontSize="Small" x:Name="empLocation"/>
-            <Entry Text="Sudbury, Ontario" BackgroundColor="AntiqueWhite" FontAttributes="Bold" HorizontalOptions="Fill"/>
-            
-            <Button Text="Next" TextColor="Black"
+                    <Label Text="Department:" FontAttributes="Bold" FontSize="Small" x:Name="empDept"/>
+                    <Entry Text="Information Technology"  BackgroundColor="AntiqueWhite" FontAttributes="Bold" HorizontalOptions="Fill"/>
+
+
+                    <Label Text="Location:" FontAttributes="Bold" FontSize="Small" x:Name="empLocation"/>
+                    <Entry Text="Sudbury, Ontario" BackgroundColor="AntiqueWhite" FontAttributes="Bold" HorizontalOptions="Fill"/>
+
+
+                </VerticalStackLayout>
+            </Grid>
+
+            <Grid Grid.Row="3">
+                <Button Text="Add new employee" TextColor="Black"
                     FontSize="Small" FontAttributes="Bold"
                     Margin="0,0,0,5" Background="{StaticResource Secondary}" 
-                    HeightRequest="50" WidthRequest="100"
-                    Clicked="editInfoPage"/>
+                    HeightRequest="50" WidthRequest="300"
+                    Clicked="Button_Clicked"/>
+            </Grid>
 
-        </VerticalStackLayout>
-
-    </Grid>
+        </Grid>
 
 </ContentPage>
